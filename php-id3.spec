@@ -6,14 +6,12 @@
 Summary:	Functions to read and write ID3 tags in MP3 files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 10
+Release:	%mkrel 11
 Group:		Development/PHP
 URL:		http://pecl.php.net/package/id3
 License:	PHP License
 Source0:	id3-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
-Provides:	php5-id3
-Obsoletes:	php5-id3
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -27,6 +25,15 @@ It supports version 1.0 and version 1.1.
 [ "../package.xml" != "/" ] && mv ../package.xml .
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
@@ -55,5 +62,3 @@ EOF
 %doc examples CREDITS EXPERIMENTAL TODO package.xml
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
