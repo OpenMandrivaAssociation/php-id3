@@ -13,7 +13,6 @@ License:	PHP License
 Source0:	id3-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 id3 enables to to retrieve and update information from ID3 tags in MP3 files.
