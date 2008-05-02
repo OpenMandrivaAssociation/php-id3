@@ -6,14 +6,14 @@
 Summary:	Functions to read and write ID3 tags in MP3 files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 14
+Release:	%mkrel 15
 Group:		Development/PHP
 URL:		http://pecl.php.net/package/id3
 License:	PHP License
 Source0:	id3-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 id3 enables to to retrieve and update information from ID3 tags in MP3 files.
