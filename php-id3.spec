@@ -8,9 +8,10 @@ Name:		php-%{modname}
 Version:	0.2
 Release:	%mkrel 35
 Group:		Development/PHP
-URL:		http://pecl.php.net/package/id3
 License:	PHP License
-Source0:	id3-%{version}.tar.bz2
+URL:		http://pecl.php.net/package/id3
+Source0:	http://pecl.php.net/get/id3-%{version}.tgz
+Patch0:		id3-0.2-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -23,6 +24,8 @@ It supports version 1.0 and version 1.1.
 
 %setup -q -n id3-%{version}
 [ "../package.xml" != "/" ] && mv ../package.xml .
+
+%patch0 -p0
 
 %build
 %serverbuild
