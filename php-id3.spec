@@ -6,7 +6,7 @@
 Summary:	Functions to read and write ID3 tags in MP3 files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 35
+Release:	36
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/id3
