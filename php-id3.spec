@@ -9,7 +9,7 @@ Version:	0.2
 Release:	36
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/id3
+URL:		https://pecl.php.net/package/id3
 Source0:	http://pecl.php.net/get/id3-%{version}.tgz
 Patch0:		id3-0.2-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
