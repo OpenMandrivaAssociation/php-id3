@@ -12,6 +12,11 @@ License:	PHP License
 URL:		https://pecl.php.net/package/id3
 Source0:	http://pecl.php.net/get/id3-%{version}.tgz
 Patch0:		id3-0.2-php54x.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
